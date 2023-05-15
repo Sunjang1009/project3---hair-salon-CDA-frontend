@@ -33,9 +33,11 @@ function ClientsIndex(){
                     return (
                         <div key={idx}>
                             <Link to={`/clients/${client._id}`}>
-                                <h2>name:{client.name}</h2>
+                                <h2>Name: {client.name}</h2>
                             </Link>
-                            <h2>email:{client.email}</h2>
+                            <img src={client.image} alt={client.name} />
+                            <h2>Email: {client.email}</h2>
+                            <h2>Phone Number: {client.phoneNumber}</h2>
                         </div>
                     )
                 })}
