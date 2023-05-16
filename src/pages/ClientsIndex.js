@@ -35,7 +35,9 @@ function ClientsIndex(){
                             <Link to={`/clients/${client._id}`}>
                                 <h2>Name: {client.name}</h2>
                             </Link>
-                            <img src={client.image} alt={client.name} />
+                            <div className="client-image">
+                                <img src={client.image} alt={client.name} />
+                            </div>
                             <h2>Email: {client.email}</h2>
                             <h2>Phone Number: {client.phoneNumber}</h2>
                         </div>
