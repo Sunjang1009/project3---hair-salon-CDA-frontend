@@ -1,6 +1,81 @@
+import { useState, useEffect } from "react"
+import { Link } from "react-router"
+
 function NewClients(){
+    
+    const [clientForm, setClientForm] = useState([{
+        name : "",
+        image:"",
+        email:"",
+        phoneNumber:"",
+        hairStyle:"",
+        //later will be array with photos??
+        services:""
+    }]);
+
+    function handleChange(e){
+        setClientForm((prevForm)=>({
+            ...prevForm,
+            [e.target.name]:e.target.value
+        }))
+    };
+
+    async function handleSubmit(e){
+        try{
+            e.preventDefault();
+            await fetch("https://project3-hair-salon-api.onrender.com/clients", {
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify(clientForm)
+            });
+            e.target.reset();
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+
     return(
-        <h1>New Clients Page</h1>
+
+        <>
+            <h1>New Clients Page</h1>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    <h5>Name: </h5>
+                    <input type="text" name="name" 
+                    onChange={handleChange} placeholder="client's name" required /> 
+                </label>
+                <label>
+                    <h5>Image URL: </h5>
+                    <input type="text" name="image" 
+                    onChange={handleChange} placeholder="client's picture" /> 
+                </label>
+                <label>
+                    <h5>Email: </h5>
+                    <input type="text" name="email" 
+                    onChange={handleChange} placeholder="client's email" required /> 
+                </label>
+                <label>
+                    <h5>Phone Number: </h5>
+                    <input type="text" name="phoneNumber" 
+                    onChange={handleChange} placeholder="client's Phone Number" required /> 
+                </label>
+                <label>
+                    <h5>Hair Style: </h5>
+                    <input type="text" name="hairStyle" 
+                    onChange={handleChange} placeholder="client's hair style" /> 
+                </label>
+                <label>
+                    <h5>Service: </h5>
+                    <input type="text" name="services" 
+                    onChange={handleChange} placeholder="client's hair services" /> 
+                </label>
+                <button>Add a Client!</button>
+
+            </form>
+        </>
     )
 }
 
