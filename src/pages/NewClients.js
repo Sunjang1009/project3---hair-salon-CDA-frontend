@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router"
 
 function NewClients(){
+
     
     const [clientForm, setClientForm] = useState([{
         name : "",
@@ -13,12 +14,26 @@ function NewClients(){
         services:""
     }]);
 
+    const URL = "https://project3-hair-salon-api.onrender.com"
+
     function handleChange(e){
         setClientForm((prevForm)=>({
             ...prevForm,
             [e.target.name]:e.target.value
         }))
     };
+
+    // async function getClients(){
+    //     try{
+    //         let myClients = await fetch(URL + "/clients");
+    //         myClients = await myClients.json();
+    //         setClients(myClients);
+
+    //     }catch(err){
+    //         console.log(err)
+    //     };
+    // };
+
 
     async function handleSubmit(e){
         try{
@@ -30,6 +45,9 @@ function NewClients(){
                 },
                 body : JSON.stringify(clientForm)
             });
+
+            // getClients();
+
             e.target.reset();
         }catch(err){
             console.log(err);
