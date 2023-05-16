@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router"
+import { useState } from "react"
 
 function NewClients(){
 
-    
     const [clientForm, setClientForm] = useState([{
         name : "",
         image:"",
@@ -13,8 +11,6 @@ function NewClients(){
         //later will be array with photos??
         services:""
     }]);
-
-    const URL = "https://project3-hair-salon-api.onrender.com"
 
     function handleChange(e){
         setClientForm((prevForm)=>({
