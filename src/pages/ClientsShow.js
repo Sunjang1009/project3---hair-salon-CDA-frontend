@@ -7,38 +7,72 @@ function ClientsShow(){
     const navigate = useNavigate();
 
     const [ client, setClient ] = useState(null)
+    const [ editForm, setEditForm ] = useState(client)
+
+
     const { clientId } = useParams();
+
 
     // console.log(clientId);
 
     const URL = `https://project3-hair-salon-api.onrender.com/clients/${clientId}`
 
+    
+    async function removeClient(){
+        try{
+            const options = {
+                method : "DELETE"
+            }
+            
+            const response = await fetch(URL, options);
+            const deletedClient = await response.json();
+            console.log(deletedClient);
+            navigate("/");
+            
+        }catch(err){
+            console.log(err)
+        }
+    }
+    // console.log(`Current Client is ${JSON.stringify(client)}`);
+    
+    async function updatedClient(e){
+        e.preventDefault();
+        try{
+            const response = await fetch(URL, {
+                method: "PUT",
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body:JSON.stringify(editForm),
+            })
+            
+            const updatedClient = await response.json();
+            setClient(updatedClient)
+            setEditForm(updatedClient)
+            
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     async function getClient(){
         try{
             const response = await fetch(URL)
-            const myClient = await response.json();
-            setClient(myClient);
+            const foundClient = await response.json();
+            setClient(foundClient);
+            setEditForm(foundClient);
 
         }catch(err){
             console.log(err);
         };
     };
 
-    async function removeClient(){
-        try{
-            const options = {
-                method : "DELETE"
-            }
-
-            const response = await fetch(URL, options);
-            const deletedClient = await response.json();
-            navigate("/");
-
-        }catch(err){
-            console.log(err)
-        }
+    function handleChange(e){
+        setEditForm({
+            ...editForm,
+            [e.target.name]: e.target.value
+        })
     }
-    // console.log(`Current Client is ${JSON.stringify(client)}`);
 
     useEffect(()=>{
         getClient()
@@ -59,6 +93,54 @@ function ClientsShow(){
                         Remove Client
                     </button>
                 </div>
+                <section>
+                    <h2>Edit this Person</h2>
+                    <form onSubmit={updatedClient}>
+                        <input 
+                        type="text"
+                        value={editForm.name}
+                        name="name"
+                        placeholder="name"
+                        onChange={handleChange}    
+                        />
+                        <input 
+                        type="text"
+                        value={editForm.image}
+                        name="image"
+                        placeholder="image URL"
+                        onChange={handleChange}    
+                        />
+                        <input 
+                        type="text"
+                        value={editForm.email}
+                        name="email"
+                        placeholder="email"
+                        onChange={handleChange}    
+                        />
+                        <input 
+                        type="text"
+                        value={editForm.phoneNumber}
+                        name="phoneNumber"
+                        placeholder="phoneNumber"
+                        onChange={handleChange}    
+                        />
+                        <input 
+                        type="text"
+                        value={editForm.hairStyle}
+                        name="hairStyle"
+                        placeholder="hairStyle"
+                        onChange={handleChange}    
+                        />
+                        <input 
+                        type="text"
+                        value={editForm.services}
+                        name="services"
+                        placeholder="services"
+                        onChange={handleChange}    
+                        />
+                        <input type="submit" value="Update" />
+                    </form>
+                </section>
             </div>
         )
     }
