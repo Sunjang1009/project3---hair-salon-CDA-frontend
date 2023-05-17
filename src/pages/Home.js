@@ -2,7 +2,7 @@ function Home(){
     return(
         <div>
             {/* <h1>Home Page</h1> */}
-            <img className="home-image" src="https://i.etsystatic.com/7942433/r/il/b6c939/2602986650/il_340x270.2602986650_p9bc.jpg"
+            <img className="home-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-SDAaDv2MYWsFxhPvsVYyCo8HwyJIkBQ2YqbD_UbTLA&usqp=CAU&ec=48665701"
             alt="home page image"
             />
         </div>

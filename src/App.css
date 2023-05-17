@@ -4,8 +4,8 @@ nav {
   background-color: rgb(252, 189, 227);
   color: white;
   text-decoration: none;
-  height: 7vh;
-  font-size: 2em;
+  height: 5vh;
+  font-size: 1.2em;
   padding: 10px;
 }
 
@@ -22,8 +22,11 @@ main {
 footer {
   background-color: rgb(252, 189, 227);
   padding-left: 10px;
-  height: 7vh;
+  height: 5vh;
+  font-size: 1.2em;
   flex-shrink: 0;
+  padding: 10px;
+  text-align-last: left;
 }
 
 .home-image{
@@ -61,11 +64,19 @@ footer {
 .App-link {
   color: #61dafb;
 }
-
-.about-image{
-  width:100%;
+.about-container{
+  display: grid;
+  grid-template-columns: auto 3fr; /* Adjust column sizes as needed */
+  grid-gap: 200px; 
 }
 
+.about-image{
+  width:150%;
+  display: inline-block;
+}
+.about-content{
+  text-align: left;
+}
 
 .container{
   display: grid;
