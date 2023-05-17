@@ -55,40 +55,43 @@ function NewClients(){
 
         <>
             <h1>New Clients Page</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <h5>Name: </h5>
-                    <input type="text" name="name" 
-                    onChange={handleChange} placeholder="client's name" required /> 
-                </label>
-                <label>
-                    <h5>Image URL: </h5>
-                    <input type="text" name="image" 
-                    onChange={handleChange} placeholder="client's picture" /> 
-                </label>
-                <label>
-                    <h5>Email: </h5>
-                    <input type="text" name="email" 
-                    onChange={handleChange} placeholder="client's email" required /> 
-                </label>
-                <label>
-                    <h5>Phone Number: </h5>
-                    <input type="text" name="phoneNumber" 
-                    onChange={handleChange} placeholder="client's Phone Number" required /> 
-                </label>
-                <label>
-                    <h5>Hair Style: </h5>
-                    <input type="text" name="hairStyle" 
-                    onChange={handleChange} placeholder="client's hair style" /> 
-                </label>
-                <label>
-                    <h5>Service: </h5>
-                    <input type="text" name="services" 
-                    onChange={handleChange} placeholder="client's hair services" /> 
-                </label>
-                <button>Add a Client!</button>
+            <div>
 
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <h5>Name: </h5>
+                        <input type="text" name="name" 
+                        onChange={handleChange} placeholder="client's name" required /> 
+                    </label>
+                    <label>
+                        <h5>Image URL: </h5>
+                        <input type="text" name="image" 
+                        onChange={handleChange} placeholder="client's picture" /> 
+                    </label>
+                    <label>
+                        <h5>Email: </h5>
+                        <input type="text" name="email" 
+                        onChange={handleChange} placeholder="client's email" required /> 
+                    </label>
+                    <label>
+                        <h5>Phone Number: </h5>
+                        <input type="text" name="phoneNumber" 
+                        onChange={handleChange} placeholder="client's Phone Number" required /> 
+                    </label>
+                    <label>
+                        <h5>Hair Style: </h5>
+                        <input type="text" name="hairStyle" 
+                        onChange={handleChange} placeholder="client's hair style" /> 
+                    </label>
+                    <label>
+                        <h5>Service: </h5>
+                        <input type="text" name="services" 
+                        onChange={handleChange} placeholder="client's hair services" /> 
+                    </label>
+                    <button>Add a Client!</button>
+
+                </form>
+            </div>
         </>
     )
 }
