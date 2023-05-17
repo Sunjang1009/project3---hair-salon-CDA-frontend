@@ -82,7 +82,6 @@ function ClientsShow(){
     function loaded(){
         return (
             <div>
-                <h1>Client's Detail</h1>
                 <h2>{client.name}</h2>
                 <img src={client.image} alt={client.name}/>
                 <h2>{client.email}</h2>

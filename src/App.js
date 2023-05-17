@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ClientsIndex from './pages/ClientsIndex';
 import ClientsShow from './pages/ClientsShow';
 import NewClients from './pages/NewClients';
+import About from './pages/About';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path=":clientId" element={<ClientsShow />}/>
         </Route>
         <Route path="/new" element={<NewClients />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </div>
