@@ -40,6 +40,7 @@ function ClientsIndex(){
                             </div>
                             <h2>Email: {client.email}</h2>
                             <h2>Phone Number: {client.phoneNumber}</h2>
+                            <hr/>
                         </div>
                     )
                 })}
