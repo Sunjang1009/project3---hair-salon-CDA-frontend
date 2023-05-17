@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router"
+import { useParams, useNavigate } from "react-router-dom"
 
 function ClientsShow(){
+
+    //create navigate instance
+    const navigate = useNavigate();
 
     const [ client, setClient ] = useState(null)
     const { clientId } = useParams();
@@ -21,6 +24,20 @@ function ClientsShow(){
         };
     };
 
+    async function removeClient(){
+        try{
+            const options = {
+                method : "DELETE"
+            }
+
+            const response = await fetch(URL, options);
+            const deletedClient = await response.json();
+            navigate("/");
+
+        }catch(err){
+            console.log(err)
+        }
+    }
     // console.log(`Current Client is ${JSON.stringify(client)}`);
 
     useEffect(()=>{
@@ -37,6 +54,11 @@ function ClientsShow(){
                 <h2>{client.phoneNumber}</h2>
                 <h2>{client.hairStyle}</h2>
                 <h2>{client.services}</h2>
+                <div>
+                    <button className="delete" onClick={removeClient}>
+                        Remove Client
+                    </button>
+                </div>
             </div>
         )
     }

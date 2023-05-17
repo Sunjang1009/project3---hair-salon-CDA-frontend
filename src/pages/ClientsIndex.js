@@ -58,7 +58,11 @@ function ClientsIndex(){
     return(
         <>
             <h1>These are my clients!</h1>
-            { clients? loaded():loading() }
+            <main>
+
+                { clients? loaded():loading() }
+
+            </main>
         </>
 
     )
