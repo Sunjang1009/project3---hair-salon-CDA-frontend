@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import EditClient from "./EditClient";
+import { Link } from "react-router-dom"
 
 function ClientsShow(){
 
@@ -36,25 +36,7 @@ function ClientsShow(){
     }
     // console.log(`Current Client is ${JSON.stringify(client)}`);
     
-    async function updatedClient(e){
-        e.preventDefault();
-        try{
-            const response = await fetch(URL, {
-                method: "PUT",
-                headers:{
-                    "Content-Type":"application/json",
-                },
-                body:JSON.stringify(editForm),
-            })
-            
-            const updatedClient = await response.json();
-            setClient(updatedClient)
-            setEditForm(updatedClient)
-            
-        }catch(err){
-            console.log(err)
-        }
-    }
+    
 
     async function getClient(){
         try{
@@ -94,15 +76,11 @@ function ClientsShow(){
                     </button>
                 </div>
                 <div>
-                    <button className="edit" >
-                        Edit Client
-                    </button>
+                    <Link to={`/clients/${clientId}/edit`}>
+                        <button className="edit" >Edit Client</button>
+                    </Link>
                 </div>
-                <EditClient 
-                editForm={editForm}
-                handleChange={handleChange}
-                updatedClient={updatedClient}
-                />
+                
             </div>
         )
     }
