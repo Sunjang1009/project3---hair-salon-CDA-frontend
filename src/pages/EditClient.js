@@ -2,8 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function EditClient() {
+
+    const navigate = useNavigate();
 
     const [ client, setClient ] = useState(null)
 
@@ -39,6 +42,9 @@ function EditClient() {
                 body:JSON.stringify(client),
             })
             
+            //navigate to updated Client show page
+            return navigate(`/clients/${clientId}`);
+            
             // const updatedClient = await response.json();
             // setClient(updatedClient)
             
@@ -58,9 +64,6 @@ function EditClient() {
     function loaded(){
 
         return (
-
-
-        
         <>
             <section>
             <h2>Edit this Person</h2>
