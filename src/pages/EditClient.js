@@ -66,7 +66,7 @@ function EditClient() {
         return (
         <>
             <section>
-            <h2>Edit this Person</h2>
+            <h2>Edit this Client:: [{client.name}]</h2>
             <form onSubmit={updatedClient}>
                 <input
                 type="text"

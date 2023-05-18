@@ -27,6 +27,7 @@ footer {
   flex-shrink: 0;
   padding: 10px;
   text-align-last: left;
+  margin-top: 40px;
 }
 
 .home-image{
@@ -68,6 +69,10 @@ footer {
   display: grid;
   grid-template-columns: auto 3fr; /* Adjust column sizes as needed */
   grid-gap: 200px; 
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .about-image{
@@ -76,6 +81,8 @@ footer {
 }
 .about-content{
   text-align: left;
+  text-shadow: #282c34;
+  font-size: 1.2em;
 }
 
 .container{

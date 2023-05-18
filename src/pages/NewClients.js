@@ -54,7 +54,7 @@ function NewClients(){
     return(
 
         <>
-            <h1>New Clients Page</h1>
+            <h1>Add a New Client</h1>
             <div>
 
                 <form onSubmit={handleSubmit}>
