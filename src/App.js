@@ -8,6 +8,7 @@ import ClientsShow from './pages/ClientsShow';
 import NewClients from './pages/NewClients';
 import EditClient from './pages/EditClient';
 import About from './pages/About';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
