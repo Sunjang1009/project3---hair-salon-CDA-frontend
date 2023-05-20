@@ -8,7 +8,7 @@ import NewClients from "../pages/NewClients";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from "react-bootstrap/Navbar";
-import NewClientsBootStrap from "../pages/NewClientsBootStrap";
+import NewClientsBootStrap from "../pages/NewClients";
 
 
 function Header() {

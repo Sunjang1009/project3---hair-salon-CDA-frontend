@@ -1,103 +1,100 @@
-import { useState } from "react"
+import { Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+// import { FormControl } from 'react-bootstrap';
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function NewClients(){
+function NewClients() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
 
     const [clientForm, setClientForm] = useState([{
-        name : "",
-        image:"",
-        email:"",
-        phoneNumber:"",
-        hairStyle:"",
+        name: "",
+        image: "",
+        email: "",
+        phoneNumber: "",
+        hairStyle: "",
         //later will be array with photos??
-        services:""
+        services: ""
     }]);
 
-    function handleChange(e){
-        setClientForm((prevForm)=>({
+    
+
+    function handleChange(e) {
+        console.log(e.target)
+        setClientForm((prevForm) => ({
             ...prevForm,
-            [e.target.name]:e.target.value
+            [e.target.name]: e.target.value
         }))
     };
 
-    // async function getClients(){
-    //     try{
-    //         let myClients = await fetch(URL + "/clients");
-    //         myClients = await myClients.json();
-    //         setClients(myClients);
+    console.log(clientForm)
 
-    //     }catch(err){
-    //         console.log(err)
-    //     };
-    // };
-
-
-    async function handleSubmit(e){
-        try{
+    async function handleSubmit(e) {
+        try {
             e.preventDefault();
             await fetch("https://project3-hair-salon-api.onrender.com/clients", {
-                method : "POST",
-                headers : {
-                    "Content-Type" : "application/json"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body : JSON.stringify(clientForm)
+                body: JSON.stringify(clientForm)
             });
 
-            // getClients();
-            navigate('/clients')
+            navigate(`/clients`);
+
 
             e.target.reset();
-        }catch(err){
+        } catch (err) {
             console.log(err);
         }
     }
 
 
-    return(
+    return (
+      
+        <Form onSubmit={handleSubmit}>
 
-        <>
-            <h1>Add a New Client</h1>
-            <div>
+            <Form.Group controlId="name">
+                <Form.Label>*Name</Form.Label>
+                <Form.Control name="name" type="text" placeholder="Enter Client's Name" onChange={handleChange} />
+            </Form.Group>
 
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        <h5>Name: </h5>
-                        <input type="text" name="name" 
-                        onChange={handleChange} placeholder="client's name" required /> 
-                    </label>
-                    <label>
-                        <h5>Image URL: </h5>
-                        <input type="text" name="image" 
-                        onChange={handleChange} placeholder="client's picture" /> 
-                    </label>
-                    <label>
-                        <h5>Email: </h5>
-                        <input type="text" name="email" 
-                        onChange={handleChange} placeholder="client's email" required /> 
-                    </label>
-                    <label>
-                        <h5>Phone Number: </h5>
-                        <input type="text" name="phoneNumber" 
-                        onChange={handleChange} placeholder="client's Phone Number" required /> 
-                    </label>
-                    <label>
-                        <h5>Hair Style: </h5>
-                        <input type="text" name="hairStyle" 
-                        onChange={handleChange} placeholder="client's hair style" /> 
-                    </label>
-                    <label>
-                        <h5>Services: </h5>
-                        <input type="text" name="services" 
-                        onChange={handleChange} placeholder="client's hair services" /> 
-                    </label>
-                    <button>Add a Client!</button>
+            <Form.Group controlId="image">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control name="image" type="text" placeholder="Image URL" onChange={handleChange} />
+            </Form.Group>
 
-                </form>
-            </div>
-        </>
-    )
+            <Form.Group className="mb-3" controlId="email">
+                <Form.Label>*Email</Form.Label>
+                <Form.Control name="email" type="text" placeholder="123@gmail.com" onChange={handleChange}/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="phoneNumber">
+                <Form.Label>*Phone Number</Form.Label>
+                <Form.Control name="phoneNumber" type="text" placeholder="010-123-4567" onChange={handleChange}/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="hairStyle">
+                <Form.Label>Hair Style
+                </Form.Label>
+                <Form.Control name="hairStyle" type="text" placeholder="current client's hair style" onChange={handleChange} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="service">
+                <Form.Label>Services that he/she needs
+                </Form.Label>
+                <Form.Control name="service" type="text" placeholder="what services do you want?" onChange={handleChange} />
+            </Form.Group>
+
+
+            <Button type="submit">
+                Add a New Client
+            </Button>
+        </Form>
+       
+    );
 }
 
 export default NewClients;

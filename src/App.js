@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import ClientsIndex from './pages/ClientsIndex';
 import ClientsShow from './pages/ClientsShow';
 import NewClients from './pages/NewClients';
-import NewClientsBootStrap from './pages/NewClientsBootStrap';
+
 import EditClient from './pages/EditClient';
 import About from './pages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +25,6 @@ function App() {
           </Route>
         </Route>
         <Route path="/new" element={<NewClients />} />
-        <Route path="/newb" element={<NewClientsBootStrap />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
