@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from "react-bootstrap/Navbar";
 import NewClientsBootStrap from "../pages/NewClients";
+import About from "../pages/About";
 
 
 function Header() {
@@ -29,13 +30,13 @@ function Header() {
 
         <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                <Offcanvas.Title></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <Link to="/" element={<Home />}>Home</Link>
                 <Link to="/clients" element={<ClientsIndex />}>Clients</Link>
                 <Link to="/new" element={<NewClients />}>New</Link>
-                <Link to="/newb" element={<NewClientsBootStrap />}>NewClientsBootStrap</Link>
+                <Link to="/about" element={<About />}>About</Link>
             </Offcanvas.Body>
         </Offcanvas>
     </>

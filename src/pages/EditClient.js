@@ -1,8 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+//import react-bootstrap 
+import { Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+
 
 function EditClient() {
 
@@ -67,51 +70,70 @@ function EditClient() {
         <>
             <section>
             <h2>Edit this Client:: [{client.name}]</h2>
-            <form onSubmit={updatedClient}>
-                <input
-                type="text"
-                value={client.name}
-                name="name"
-                placeholder="name"
-                onChange={handleChange}
-                />
-                <input
-                type="text"
-                value={client.image}
-                name="image"
-                placeholder="image URL"
-                onChange={handleChange}
-                />
-                <input
-                type="text"
-                value={client.email}
-                name="email"
-                placeholder="email"
-                onChange={handleChange}
-                />
-                <input
-                type="text"
-                value={client.phoneNumber}
-                name="phoneNumber"
-                placeholder="phoneNumber"
-                onChange={handleChange}
-                />
-                <input
-                type="text"
-                value={client.hairStyle}
-                name="hairStyle"
-                placeholder="hairStyle"
-                onChange={handleChange}
-                />
-                <input
-                type="text"
-                value={client.services}
-                name="services"
-                placeholder="services"
-                onChange={handleChange}
-                />
-                <input type="submit" value="Update" />
-            </form>
+            <Form onSubmit={updatedClient}>
+                <Form.Group className="mb-3" controlId="name">
+                    <Form.Control
+                    type="text"
+                    value={client.name}
+                    name="name"
+                    placeholder="name"
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="image">
+                    <Form.Control
+                    type="text"
+                    value={client.image}
+                    name="image"
+                    placeholder="image URL"
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="email">
+                    <Form.Control
+                    type="text"
+                    value={client.email}
+                    name="email"
+                    placeholder="email"
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="phoneNumber">
+                    <Form.Control
+                    type="text"
+                    value={client.phoneNumber}
+                    name="phoneNumber"
+                    placeholder="phoneNumber"
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="hairStyle">
+                    <Form.Control
+                    type="text"
+                    value={client.hairStyle}
+                    name="hairStyle"
+                    placeholder="hairStyle"
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="service">
+                    <Form.Control
+                    type="text"
+                    value={client.service}
+                    name="service"
+                    placeholder="services"
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Button type="submit">Update</Button>
+                
+            </Form>
             </section>
         
         </>

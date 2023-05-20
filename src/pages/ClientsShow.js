@@ -69,7 +69,7 @@ function ClientsShow(){
                 <h2>{client.email}</h2>
                 <h2>{client.phoneNumber}</h2>
                 <h2>{client.hairStyle}</h2>
-                <h2>{client.services}</h2>
+                <h2>{client.service}</h2>
                 <div>
                     <button className="delete" onClick={removeClient}>
                         Remove Client

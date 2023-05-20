@@ -56,12 +56,12 @@ function NewClients() {
       
         <Form onSubmit={handleSubmit}>
 
-            <Form.Group controlId="name">
+            <Form.Group className="mb-3" controlId="name">
                 <Form.Label>*Name</Form.Label>
                 <Form.Control name="name" type="text" placeholder="Enter Client's Name" onChange={handleChange} />
             </Form.Group>
 
-            <Form.Group controlId="image">
+            <Form.Group className="mb-3" controlId="image">
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control name="image" type="text" placeholder="Image URL" onChange={handleChange} />
             </Form.Group>
