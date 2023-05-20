@@ -8,6 +8,7 @@ import NewClients from "../pages/NewClients";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from "react-bootstrap/Navbar";
+import NewClientsBootStrap from "../pages/NewClientsBootStrap";
 
 
 function Header() {
@@ -34,6 +35,7 @@ function Header() {
                 <Link to="/" element={<Home />}>Home</Link>
                 <Link to="/clients" element={<ClientsIndex />}>Clients</Link>
                 <Link to="/new" element={<NewClients />}>New</Link>
+                <Link to="/newb" element={<NewClientsBootStrap />}>NewClientsBootStrap</Link>
             </Offcanvas.Body>
         </Offcanvas>
     </>
