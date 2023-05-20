@@ -133,9 +133,9 @@ function EditClient() {
 
                 <Button 
                 style={{
-                    backgroundColor:"rgb(252, 189, 227)",
+                    backgroundColor:"rgb(244 167 187)",
                     color:"white",
-                    borderColor:"rgb(252, 189, 227)"
+                    borderColor:"rgb(244 167 187)"
                     
                     }}  type="submit">Update</Button>
 

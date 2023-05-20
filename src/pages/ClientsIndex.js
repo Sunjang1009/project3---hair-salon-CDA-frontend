@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { HiPhone } from "react-icons/hi"
+import { MdEmail } from "react-icons/md"
+import { IoMdPerson } from "react-icons/io"
 
 function ClientsIndex() {
     const [clients, setClients] = useState(null);
@@ -38,10 +41,10 @@ function ClientsIndex() {
                                 </div>
                                 <div className="content">
                                     <Link style={{ textDecoration: "none" }} to={`/clients/${client._id}`}>
-                                        <h5>Name: {client.name}</h5>
+                                        <h5><IoMdPerson/> {client.name}</h5>
                                     </Link>
-                                    <h5>Email: {client.email}</h5>
-                                    <h5>Phone Number: {client.phoneNumber}</h5>
+                                    <h5><MdEmail/> {client.email}</h5>
+                                    <h5> <HiPhone/> {client.phoneNumber}</h5>
 
                                 </div>
                             </div>
