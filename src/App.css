@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(252, 189, 227);
+  background-color: rgb(244 167 187);
   color: white;
   text-decoration: none;
   height: 5vh;
@@ -17,6 +17,10 @@ nav {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -28,14 +32,16 @@ main {
 
 
 footer {
-  background-color: rgb(252, 189, 227);
-  padding-left: 10px;
+  background-color: black;
+  color: rgb(244 167 187);
+
   height: 5vh;
-  font-size: 1.2em;
+  font-size: 1em;
   flex-shrink: 0;
   /* padding: 10px; */
-  text-align-last: left;
+  text-align: center;
   margin-top: 10px;
+  padding-top: 5px;
 }
 
 .home-image{
@@ -137,7 +143,7 @@ form {
 }
 .edit:hover {
   border: 1px solid #ddd;
-  background-color: rgb(252, 189, 227);
+  background-color: rgb(244 167 187);
   color: white;
   transform: scale(1.1, 1.1);
 }
@@ -153,6 +159,16 @@ form {
   background-color: black;
   color: white;
   transform: scale(1.1, 1.1);
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+}
+
+.offcanvas-body > a {
+  margin-bottom: 20px;
 }
 
 @keyframes App-logo-spin {

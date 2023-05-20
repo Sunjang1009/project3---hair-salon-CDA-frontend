@@ -131,8 +131,14 @@ function EditClient() {
                     />
                 </Form.Group>
 
-                <Button type="submit">Update</Button>
-                
+                <Button 
+                style={{
+                    backgroundColor:"rgb(252, 189, 227)",
+                    color:"white",
+                    borderColor:"rgb(252, 189, 227)"
+                    
+                    }}  type="submit">Update</Button>
+
             </Form>
             </section>
         
