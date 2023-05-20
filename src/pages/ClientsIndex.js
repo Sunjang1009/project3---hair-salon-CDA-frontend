@@ -40,7 +40,7 @@ function ClientsIndex() {
                                     <img src={client.image} alt={client.name} />
                                 </div>
                                 <div className="content">
-                                    <Link style={{ textDecoration: "none" }} to={`/clients/${client._id}`}>
+                                    <Link style={{ textDecoration: "none" }} className="index-link-font" to={`/clients/${client._id}`}>
                                         <h5><IoMdPerson/> {client.name}</h5>
                                     </Link>
                                     <h5><MdEmail/> {client.email}</h5>
@@ -48,7 +48,7 @@ function ClientsIndex() {
 
                                 </div>
                             </div>
-                            <hr />
+                            <hr className="pink-hr"/>
                         </div>
 
                     )

@@ -164,9 +164,26 @@ form {
   transform: scale(1.1, 1.1);
 }
 
+.header-link-font {
+  color : black;
+  transition: color 0.3s ease;
+}
+.header-link-font:hover{
+  color:rgb(244 167 187);
+}
+
 .index-body{
   text-align: center;
   background-color: #faf8f9;
+}
+
+.index-link-font {
+  color : black;
+  transition: color 0.3s ease;
+
+}
+.index-link-font:hover{
+  color:rgb(244 167 187);
 }
 
 .show-body{
@@ -186,6 +203,11 @@ form {
   margin-bottom: 20px;
 }
 
+.pink-hr {
+  border: none;
+  height: 2px;
+  background-color: rgb(244 167 187);
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -35,16 +35,16 @@ function Header() {
 
                     <div className="offcanvas-body">
 
-                        <Link style={{textDecoration:"none"}} to="/" element={<Home />}>
+                        <Link style={{textDecoration:"none"}} className="header-link-font" to="/" element={<Home />}>
                             HOME</Link>
 
-                        <Link style={{textDecoration:"none"}} to="/clients" element={<ClientsIndex />}>
+                        <Link style={{textDecoration:"none"}} className="header-link-font" to="/clients" element={<ClientsIndex />}>
                             CLIENTS</Link>
 
-                        <Link style={{textDecoration:"none"}} to="/new" element={<NewClients />}>
+                        <Link style={{textDecoration:"none"}} className="header-link-font" to="/new" element={<NewClients />}>
                             NEW</Link>
 
-                        <Link style={{textDecoration:"none"}} to="/about" element={<About />}>
+                        <Link style={{textDecoration:"none"}}className="header-link-font" to="/about" element={<About />}>
                             ABOUT</Link>
 
                     </div>
