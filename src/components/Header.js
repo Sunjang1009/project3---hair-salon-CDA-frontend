@@ -4,14 +4,22 @@ import Home from "../pages/Home";
 import ClientsIndex from "../pages/ClientsIndex";
 import NewClients from "../pages/NewClients";
 import About from "../pages/About";
+
+
 //import react-bootstrap
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from "react-bootstrap/Navbar";
+import { Form } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
+
+//import react-icon 
 import { HiMenu } from "react-icons/hi";
+import { FiSearch } from "react-icons/fi";
 
 
 function Header() {
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -20,8 +28,16 @@ function Header() {
     return (
         <>
             <Navbar>
+
                 <span className="nav-button" onClick={handleShow}>
                     <HiMenu />
+                </span>
+
+                <span>
+                    <InputGroup className="search-form">
+                        <Form.Control placeholder="Search by Name" />
+                        <button><FiSearch/></button>
+                    </InputGroup>
                 </span>
 
             </Navbar>
@@ -35,16 +51,16 @@ function Header() {
 
                     <div className="offcanvas-body">
 
-                        <Link style={{textDecoration:"none"}} className="header-link-font" to="/" element={<Home />}>
+                        <Link style={{ textDecoration: "none" }} className="header-link-font" to="/" element={<Home />}>
                             HOME</Link>
 
-                        <Link style={{textDecoration:"none"}} className="header-link-font" to="/clients" element={<ClientsIndex />}>
+                        <Link style={{ textDecoration: "none" }} className="header-link-font" to="/clients" element={<ClientsIndex />}>
                             CLIENTS</Link>
 
-                        <Link style={{textDecoration:"none"}} className="header-link-font" to="/new" element={<NewClients />}>
+                        <Link style={{ textDecoration: "none" }} className="header-link-font" to="/new" element={<NewClients />}>
                             NEW</Link>
 
-                        <Link style={{textDecoration:"none"}}className="header-link-font" to="/about" element={<About />}>
+                        <Link style={{ textDecoration: "none" }} className="header-link-font" to="/about" element={<About />}>
                             ABOUT</Link>
 
                     </div>

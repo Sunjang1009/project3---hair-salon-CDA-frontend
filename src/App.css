@@ -208,6 +208,10 @@ form {
   height: 2px;
   background-color: rgb(244 167 187);
 }
+.search-form {
+  background-color: none;
+  
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
