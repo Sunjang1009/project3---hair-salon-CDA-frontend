@@ -63,13 +63,13 @@ function ClientsShow(){
 
     function loaded(){
         return (
-            <div>
-                <h2>{client.name}</h2>
+            <div className="show-body">
+                <h4>{client.name}</h4>
                 <img src={client.image} alt={client.name}/>
-                <h2>{client.email}</h2>
-                <h2>{client.phoneNumber}</h2>
-                <h2>{client.hairStyle}</h2>
-                <h2>{client.service}</h2>
+                <h5>{client.email}</h5>
+                <h5>{client.phoneNumber}</h5>
+                <h5>{client.hairStyle}</h5>
+                <h5>{client.service}</h5>
                 <div>
                     <button className="delete" onClick={removeClient}>
                         Remove Client
@@ -90,8 +90,6 @@ function ClientsShow(){
             <h1>Loading...</h1>
         )
     }
-
-
 
     return(
         client ? loaded() : loading()

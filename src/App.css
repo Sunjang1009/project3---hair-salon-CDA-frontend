@@ -118,8 +118,8 @@ form {
   height: 100px; /* Adjust this value to suit your needs */
   border-radius: 50%;
   overflow: hidden;
-  margin-left: 200px;
-  margin-top: 30px;
+  margin-left: 130px;
+  margin-top: 8px;
 }
 
 .client-image img {
@@ -132,6 +132,7 @@ form {
 .content {
   text-align: left;
   margin-left: 80px;
+  margin-top: 10px;
 }
 
 .edit {
@@ -140,6 +141,8 @@ form {
   padding: 8px 24px;
   border-radius: 4px;
   transition: transform .5s ease-in-out;
+  margin-top: 10px;
+
 }
 .edit:hover {
   border: 1px solid #ddd;
@@ -159,6 +162,18 @@ form {
   background-color: black;
   color: white;
   transform: scale(1.1, 1.1);
+}
+
+.index-body{
+  text-align: center;
+  background-color: #faf8f9;
+}
+
+.show-body{
+  text-align: center;
+  background-color: #faf8f9;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .offcanvas-body {
