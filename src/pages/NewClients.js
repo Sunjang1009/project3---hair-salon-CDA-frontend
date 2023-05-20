@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 function NewClients(){
+
+    const navigate = useNavigate()
 
     const [clientForm, setClientForm] = useState([{
         name : "",
@@ -43,6 +46,7 @@ function NewClients(){
             });
 
             // getClients();
+            navigate('/clients')
 
             e.target.reset();
         }catch(err){
@@ -84,7 +88,7 @@ function NewClients(){
                         onChange={handleChange} placeholder="client's hair style" /> 
                     </label>
                     <label>
-                        <h5>Service: </h5>
+                        <h5>Services: </h5>
                         <input type="text" name="services" 
                         onChange={handleChange} placeholder="client's hair services" /> 
                     </label>
