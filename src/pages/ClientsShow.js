@@ -28,7 +28,7 @@ function ClientsShow(){
             const response = await fetch(URL, options);
             const deletedClient = await response.json();
             console.log(deletedClient);
-            navigate("/");
+            navigate("/clients");
             
         }catch(err){
             console.log(err)

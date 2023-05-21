@@ -4,26 +4,32 @@ import Home from "../pages/Home";
 import ClientsIndex from "../pages/ClientsIndex";
 import NewClients from "../pages/NewClients";
 import About from "../pages/About";
-
+import SearchBar from "./SearchBar";
 
 //import react-bootstrap
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from "react-bootstrap/Navbar";
-import { Form } from "react-bootstrap";
-import { InputGroup } from "react-bootstrap";
+
 
 //import react-icon 
 import { HiMenu } from "react-icons/hi";
-import { FiSearch } from "react-icons/fi";
 
 
 function Header() {
 
     const [show, setShow] = useState(false);
 
+    const [clients, setClients] = useState(null);
+
+    const [searchedClient, setSearchedClient] = useState(null);
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    async function handleSearch(e){
+        const myClient = await fetch()
+    }
 
     return (
         <>
@@ -32,13 +38,8 @@ function Header() {
                 <span className="nav-button" onClick={handleShow}>
                     <HiMenu />
                 </span>
-
-                <span>
-                    <InputGroup className="search-form">
-                        <Form.Control placeholder="Search by Name" />
-                        <button><FiSearch/></button>
-                    </InputGroup>
-                </span>
+                
+                <SearchBar />
 
             </Navbar>
 
