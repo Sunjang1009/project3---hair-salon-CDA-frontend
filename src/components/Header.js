@@ -20,16 +20,9 @@ function Header() {
 
     const [show, setShow] = useState(false);
 
-    const [clients, setClients] = useState(null);
-
-    const [searchedClient, setSearchedClient] = useState(null);
-
     const handleClose = () => setShow(false);
+    
     const handleShow = () => setShow(true);
-
-    async function handleSearch(e){
-        const myClient = await fetch()
-    }
 
     return (
         <>

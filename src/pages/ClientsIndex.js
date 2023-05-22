@@ -27,8 +27,6 @@ function ClientsIndex() {
 
     //console.log 
 
-    console.log(clients)
-
     function loaded() {
         return (
             <>
