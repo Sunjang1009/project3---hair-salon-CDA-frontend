@@ -59,7 +59,7 @@ function ClientsShow(){
 
     useEffect(()=>{
         getClient()
-    },[]);
+    },[clientId]);
 
     function loaded(){
         return (

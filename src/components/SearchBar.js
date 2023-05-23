@@ -13,7 +13,7 @@ function SearchBar() {
 
     const [clients, setClients] = useState([]);
 
-    const [searchedClient, setSearchedClient] = useState([]);
+    const [searchedClient, setSearchedClient] = useState({});
 
     const URL = "https://project3-hair-salon-api.onrender.com"
 
@@ -43,7 +43,8 @@ function SearchBar() {
         const filteredClients = clients.filter((client) => {
             return client.name.toLowerCase().includes(query.toLowerCase());
         });
-        setSearchedClient(filteredClients[0]);
+        // setSearchedClient({...searchedClient, [searchedClient]: filteredClients[0]});
+        console.log(filteredClients)
 
         if (filteredClients.length > 0) {
             navigate(`/clients/${filteredClients[0]._id}`);
@@ -52,6 +53,9 @@ function SearchBar() {
         }
 
         setQuery("");
+        setSearchedClient({});
+        getClients();
+
 
     }
 

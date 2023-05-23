@@ -89,9 +89,9 @@ function NewClients() {
             </Form.Group>
 
 
-            <Button type="submit">
+            <button className="edit" type="submit">
                 Add a New Client
-            </Button>
+            </button>
         </Form>
        
     );
