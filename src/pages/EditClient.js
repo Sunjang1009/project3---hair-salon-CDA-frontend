@@ -72,6 +72,7 @@ function EditClient() {
             <h2>Edit this Client:: [{client.name}]</h2>
             <Form onSubmit={updatedClient}>
                 <Form.Group className="mb-3" controlId="name">
+                    <Form.Label>*Name</Form.Label>
                     <Form.Control
                     type="text"
                     value={client.name}
@@ -82,6 +83,7 @@ function EditClient() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="image">
+                    <Form.Label>Image URL</Form.Label>
                     <Form.Control
                     type="text"
                     value={client.image}
@@ -92,6 +94,7 @@ function EditClient() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="email">
+                    <Form.Label>*Email</Form.Label>
                     <Form.Control
                     type="text"
                     value={client.email}
@@ -102,6 +105,7 @@ function EditClient() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="phoneNumber">
+                    <Form.Label>*Phone Number</Form.Label>
                     <Form.Control
                     type="text"
                     value={client.phoneNumber}
@@ -112,6 +116,7 @@ function EditClient() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="hairStyle">
+                    <Form.Label>Current Hair Style</Form.Label>
                     <Form.Control
                     type="text"
                     value={client.hairStyle}
@@ -122,6 +127,7 @@ function EditClient() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="service">
+                    <Form.Label>Hair Service</Form.Label>
                     <Form.Control
                     type="text"
                     value={client.service}
