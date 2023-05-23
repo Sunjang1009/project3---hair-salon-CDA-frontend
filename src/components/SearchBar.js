@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-import { Form } from "react-bootstrap";
-import { InputGroup } from "react-bootstrap";
 import { FiSearch } from "react-icons/fi";
 
 function SearchBar() {
 
     const navigate = useNavigate();
+
+    const { clientId } = useParams();
 
     const [query, setQuery] = useState("");
 
@@ -31,7 +31,8 @@ function SearchBar() {
 
     useEffect(() => {
         getClients();
-    }, []);
+    }, [clientId]);
+
 
     function handleInputChange(e) {
         setQuery(e.target.value);
@@ -49,23 +50,29 @@ function SearchBar() {
         } else {
             console.log("Cannot find the search");
         }
+
+        setQuery("");
+
     }
 
-        console.log(searchedClient);
+    console.log(searchedClient);
 
-        return (
+    return (
 
-            <>
-                <Form onSubmit={handleSearch}>
-                    <InputGroup className="search-form">
-                        <Form.Control placeholder="Search by Name" onChange={handleInputChange} value={query}/>
-                        <button><FiSearch /></button>
-                    </InputGroup>
-                </Form>
+        <>
+            <form className="search-form" onSubmit={handleSearch}>
 
-            </>
-        )
-    
+                <div className="input-container">
+                    <button><FiSearch /></button>
+                    <input type="text" placeholder="Search by Name" onChange={handleInputChange} value={query} />
+                </div>
+
+
+            </form>
+
+        </>
+    )
+
 }
 
 export default SearchBar;
