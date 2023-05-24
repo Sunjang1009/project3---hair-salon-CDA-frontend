@@ -16,11 +16,18 @@ nav {
   font-size: 1.2em;
   padding: 10px;
 }
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .nav-button {
-  margin-left: 20px;
   color:white;
+  margin-left: auto;
+  margin-right: 20px;
 }
+
 .nav-button:hover{
   cursor: pointer;
 }
@@ -204,7 +211,10 @@ form {
   color:rgb(244 167 187);
 }
 
-
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+}
 
 .show-body{
   text-align: center;
