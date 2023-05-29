@@ -28,7 +28,6 @@ function SearchBar() {
         };
     };
 
-
     useEffect(() => {
         getClients();
     }, [clientId]);
