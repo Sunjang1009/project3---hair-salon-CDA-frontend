@@ -26,7 +26,7 @@ function Header() {
 
     return (
         <>
-            <Navbar className="nav-container" >
+            <Navbar className="nav-container"  fixed="top">
 
                 <SearchBar />
 

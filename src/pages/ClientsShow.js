@@ -8,8 +8,7 @@ function ClientsShow(){
     const navigate = useNavigate();
 
     const [ client, setClient ] = useState(null)
-    const [ editForm, setEditForm ] = useState(client)
-
+    // const [ editForm, setEditForm ] = useState(client)
 
     const { clientId } = useParams();
 
@@ -43,22 +42,24 @@ function ClientsShow(){
             const response = await fetch(URL)
             const foundClient = await response.json();
             setClient(foundClient);
-            setEditForm(foundClient);
+            // setEditForm(foundClient);
 
         }catch(err){
             console.log(err);
         };
     };
 
-    function handleChange(e){
-        setEditForm({
-            ...editForm,
-            [e.target.name]: e.target.value
-        })
-    }
+    // function handleChange(e){
+    //     setEditForm({
+    //         ...editForm,
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
 
+    
     useEffect(()=>{
-        getClient()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+        getClient();
     },[clientId]);
 
     function loaded(){

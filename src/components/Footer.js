@@ -1,9 +1,11 @@
+import Navbar from "react-bootstrap/Navbar";
+
 function Footer(){
     return(
         <>
-            <footer>
+            <Navbar className="footer-container" fixed="bottom">
                 Connect with us
-            </footer>
+            </Navbar>
         </>
     )
 }

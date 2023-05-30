@@ -3,7 +3,7 @@ function About(){
         <div className="about-container">
             <div className="about">
 
-                <img className="about-image" src="https://i.pinimg.com/236x/63/ee/a1/63eea1568c24343de91066fecd995fda.jpg" alt="salon about image" />
+                <img className="about-image" src="https://i.pinimg.com/236x/63/ee/a1/63eea1568c24343de91066fecd995fda.jpg" alt="salon" />
 
             </div>
             <div className="about-content">

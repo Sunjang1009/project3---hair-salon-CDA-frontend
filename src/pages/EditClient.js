@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
 //import react-bootstrap 
-import { Button } from 'react-bootstrap';
+
 import { Form } from 'react-bootstrap';
 
 
@@ -37,7 +37,7 @@ function EditClient() {
     async function updatedClient(e){
         e.preventDefault();
         try{
-            const response = await fetch(URL, {
+            await fetch(URL, {
                 method: "PUT",
                 headers:{
                     "Content-Type":"application/json",
