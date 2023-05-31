@@ -56,7 +56,7 @@ function ClientsShow(){
     //     })
     // }
 
-    
+
     useEffect(()=>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
         getClient();
@@ -64,24 +64,28 @@ function ClientsShow(){
 
     function loaded(){
         return (
-            <div className="show-body">
-                <h4>{client.name}</h4>
-                <img src={client.image} alt={client.name}/>
-                <h5>{client.email}</h5>
-                <h5>{client.phoneNumber}</h5>
-                <h5>{client.hairStyle}</h5>
-                <h5>{client.service}</h5>
-                <div>
-                    <button className="delete" onClick={removeClient}>
-                        Remove Client
-                    </button>
+            <div className="show-container">
+                <div className="show-detail-container">
+                    <div className="show-body">
+                        <h4>{client.name}</h4>
+                        <img src={client.image} alt={client.name}/>
+                        <h5>{client.email}</h5>
+                        <h5>{client.phoneNumber}</h5>
+                        <h5>{client.hairStyle}</h5>
+                        <h5>{client.service}</h5>
+                        <div>
+                            <button className="delete" onClick={removeClient}>
+                                Remove Client
+                            </button>
+                        </div>
+                        <div>
+                            <Link to={`/clients/${clientId}/edit`}>
+                                <button className="edit" >Edit Client</button>
+                            </Link>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <Link to={`/clients/${clientId}/edit`}>
-                        <button className="edit" >Edit Client</button>
-                    </Link>
-                </div>
-                
             </div>
         )
     }

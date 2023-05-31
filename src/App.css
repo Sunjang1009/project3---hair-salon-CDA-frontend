@@ -214,11 +214,24 @@ form {
   justify-content: space-between;
 }
 
+.show-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.show-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .show-body{
   text-align: center;
   background-color: #faf8f9;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 60px;
 }
 
 .offcanvas-body {
