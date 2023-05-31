@@ -28,6 +28,16 @@ function Header() {
         <>
             <Navbar className="nav-container"  fixed="top">
 
+                <Navbar.Brand >
+                    <img
+                    src="/salonLogo3.svg"
+                    width="36"
+                    height="36"
+                    className="d-inline-block align-top"
+                    alt="logo"
+                    />
+                </Navbar.Brand>
+
                 <SearchBar />
 
                 <div className="nav-button" onClick={handleShow}>

@@ -4,7 +4,7 @@ function Footer(){
     return(
         <>
             <Navbar className="footer-container" fixed="bottom">
-                Connect with us
+                Connect with us 
             </Navbar>
         </>
     )
