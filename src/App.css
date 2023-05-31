@@ -277,6 +277,27 @@ form {
   border:none;
 }
 
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #faf8f9;
+}
+
+.home-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -285,3 +306,4 @@ form {
     transform: rotate(360deg);
   }
 }
+
