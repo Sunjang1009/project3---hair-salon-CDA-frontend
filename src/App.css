@@ -97,9 +97,9 @@ form {
 }
 
 .about-container{
-  display: grid;
-  grid-template-columns: auto 3fr; /* Adjust column sizes as needed */
-  grid-gap: 200px; 
+  display: flex;
+  grid-template-columns: auto 1fr; /* Adjust column sizes as needed */
+  grid-gap: 50px; 
   margin-top: 120px;
   margin-bottom: 50px;
   margin-left: 80px;
@@ -107,9 +107,10 @@ form {
 }
 
 .about-image{
-  width:150%;
-  display: inline-block;
+  height: 68vh;
+  /* display: inline-block; */
 }
+
 .about-content{
   text-align: left;
   text-shadow: #282c34;
