@@ -53,46 +53,55 @@ function NewClients() {
 
 
     return (
+
+        <div className='new-container'>
+
+            <div className='new-form-container'>
+                
+                <Form className="new-form" onSubmit={handleSubmit}>
+
+                    <Form.Group className="mb-3" controlId="name">
+                        <Form.Label>*Name</Form.Label>
+                        <Form.Control name="name" type="text" placeholder="Enter Client's Name" onChange={handleChange} />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="image">
+                        <Form.Label>Image URL</Form.Label>
+                        <Form.Control name="image" type="text" placeholder="Image URL" onChange={handleChange} />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="email">
+                        <Form.Label>*Email</Form.Label>
+                        <Form.Control name="email" type="text" placeholder="123@gmail.com" onChange={handleChange}/>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="phoneNumber">
+                        <Form.Label>*Phone Number</Form.Label>
+                        <Form.Control name="phoneNumber" type="text" placeholder="010-123-4567" onChange={handleChange}/>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="hairStyle">
+                        <Form.Label>Hair Style
+                        </Form.Label>
+                        <Form.Control name="hairStyle" type="text" placeholder="current client's hair style" onChange={handleChange} />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="service">
+                        <Form.Label>Services that he/she needs
+                        </Form.Label>
+                        <Form.Control name="service" type="text" placeholder="what services do you want?" onChange={handleChange} />
+                    </Form.Group>
+
+
+                    <button className="edit" type="submit">
+                        Add a New Client
+                    </button>
+                </Form>
+
+            </div>
+        </div>
+
       
-        <Form onSubmit={handleSubmit}>
-
-            <Form.Group className="mb-3" controlId="name">
-                <Form.Label>*Name</Form.Label>
-                <Form.Control name="name" type="text" placeholder="Enter Client's Name" onChange={handleChange} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="image">
-                <Form.Label>Image URL</Form.Label>
-                <Form.Control name="image" type="text" placeholder="Image URL" onChange={handleChange} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="email">
-                <Form.Label>*Email</Form.Label>
-                <Form.Control name="email" type="text" placeholder="123@gmail.com" onChange={handleChange}/>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="phoneNumber">
-                <Form.Label>*Phone Number</Form.Label>
-                <Form.Control name="phoneNumber" type="text" placeholder="010-123-4567" onChange={handleChange}/>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="hairStyle">
-                <Form.Label>Hair Style
-                </Form.Label>
-                <Form.Control name="hairStyle" type="text" placeholder="current client's hair style" onChange={handleChange} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="service">
-                <Form.Label>Services that he/she needs
-                </Form.Label>
-                <Form.Control name="service" type="text" placeholder="what services do you want?" onChange={handleChange} />
-            </Form.Group>
-
-
-            <button className="edit" type="submit">
-                Add a New Client
-            </button>
-        </Form>
        
     );
 }

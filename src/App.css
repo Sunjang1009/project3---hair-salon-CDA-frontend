@@ -310,6 +310,23 @@ form {
   max-height: 90%;
 }
 
+.new-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #faf8f9;
+}
+
+.new-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-form {
+  width:75vw;
+}
 
 
 @keyframes App-logo-spin {
